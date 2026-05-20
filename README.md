@@ -21,11 +21,28 @@ Skrypt opiera się na standardowych bibliotekach Pythona, co oznacza, że w wię
 ## ⚙️ Jak uruchomić?
 
 1. Sklonuj to repozytorium lub pobierz plik `mac_mail_backup.py`.
-2. Otwórz terminal w katalogu z plikiem.
-3. Uruchom skrypt poleceniem:
+2. Możesz skorzystać z gotowych skryptów uruchomieniowych klikając w nie dwukrotnie:
+   - **macOS:** `start_mac.command` (może wymagać jednorazowego nadania uprawnień: `chmod +x start_mac.command`)
+   - **Windows:** `start_windows.bat`
+
+Lub uruchomić klasycznie przez terminal:
+```bash
+python3 mac_mail_backup.py
+```
+
+## 📦 Budowanie samodzielnej aplikacji (Opcjonalne)
+
+Jeśli nie chcesz uruchamiać kodu przez terminal i wolisz posiadać samodzielną aplikację (np. plik `.app` dla macOS lub `.exe` dla Windowsa), możesz zbudować projekt za pomocą biblioteki `pyinstaller`.
+
+1. Zainstaluj PyInstallera:
    ```bash
-   python3 mac_mail_backup.py
+   pip install pyinstaller
    ```
+2. Zbuduj aplikację (komendę należy wykonać na tym systemie operacyjnym, na który chcesz wygenerować aplikację):
+   ```bash
+   python -m PyInstaller --noconfirm --windowed --onefile --name "MacOS_MailBackup" mac_mail_backup.py
+   ```
+3. Gotowy plik aplikacji znajdziesz w nowo utworzonym folderze `dist/`.
 
 ## 🖥 Jak połączyć się z QNAP na macOS?
 
